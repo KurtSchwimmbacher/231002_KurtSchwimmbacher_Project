@@ -22,6 +22,15 @@ body{
     background-color: #71ABB6;
 }
 
+.sec-head{
+    text-align: center;
+    color: #F3F8F9;
+}
+
+.trips{
+    background-color: #F3F8F9;
+}
+
 /* =============================================================================================================================================== */
 
 
@@ -48,7 +57,7 @@ body{
 
 .nav-link{
     color: #000000 !important;
-    font-family: Quicksand;
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     padding-left: 100px;
     padding-right: 100px;
@@ -56,8 +65,15 @@ body{
 
 .nav-link:hover{
     color: #71ABB6!important;
-    font-family: Quicksand;
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+}
+
+.active{
+    color: #71ABB6!important;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px; 
+    border-bottom: 2px solid #71ABB6;
 }
 
 
@@ -120,4 +136,65 @@ body{
     width: auto;
     padding: auto;
     rotate: 90deg;
+}
+
+
+/* ================================================================================ */
+/* Weather Plugin */
+.weather{
+    width: 100%;
+    height: 20vh;
+    background-color: lightgray;
+    border-radius: 25px;
+    text-align: center;
+}
+
+
+
+/* ================================================================================ */
+/* cta section */
+
+.cta-seal{
+    width: 100%;
+    background-image: url(../assets/Seal\ Explore.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* ================================================================================ */
+/* accordion section */
+.accordion-item,.accordion-button{
+    text-align: center;
+    background-color: #71ABB6 !important;
+    color: #F3F8F9 !important;
+    font-family: 'Josefin Slab', serif;
+    border: none;
+    border-bottom: 1px #FF7F22 solid;
+}
+
+
+
+/* ================================================================================ */
+/* Trips Secion */
+.card{
+    background-color: #71ABB6;
+    color: #F3F8F9;
+    font-family: 'Josefin Slab', serif;
+}
+
+.card-title{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+
+
+
+/* ==================================================================================== */
+/* footer section */
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #F3F8F9;
 }
