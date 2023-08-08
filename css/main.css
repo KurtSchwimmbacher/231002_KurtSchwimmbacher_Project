@@ -175,11 +175,12 @@ body{
 
 
 /* ================================================================================ */
-/* Trips Secion */
+/* Trips Section */
 .card{
     background-color: #71ABB6;
     color: #F3F8F9;
     font-family: 'Josefin Slab', serif;
+    border: none;
 }
 
 .card-title{
