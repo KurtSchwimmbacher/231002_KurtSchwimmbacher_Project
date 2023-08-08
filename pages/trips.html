@@ -52,26 +52,37 @@
     <div class="container">
         <h1 class="sec-head mt-5 pt-5">Trips and Destinations</h1>
 
-        <!-- Row contains list of plant cards -->
-      <div class="row py-5 gy-5" id="plantsContainer">
+        <!-- Row contains list of trips cards -->
+      <div class="row py-5 gy-5" id="tripContainer">
         <!-- Trip Card appended here -->
-
-        <div class="tripContainer">
-            <div class="col-4">
-                <!-- Card Code -->
-                <div class="card">
-                    <img src="../assets/trips/Alaska Trip.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-            </div>
-        </div>
-          
+  
       </div>
 
+      <!-- Plant Card template -->
+      <template id="tripCardTemplate">
+        <div class="col-4">
+          <!-- Card Code -->
+          <div class="card">
+              <img src="../assets/trips/Alaska Trip.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" id="tripName">Card title</h5>
+                <p class="card-text" id="destination"></p>
+                <p class="card-text" id="duration"></p>
+                <p class="card-text" id="departure"></p>
+                <p class="card-text" id="price"></p>
+              </div>
+            </div>
+      </div>
+      </template>
+      <!-- Plant Card template -->
+
     </div>
+
+
+
+    <footer>
+      
+    </footer>
 
   </body>
 </html>

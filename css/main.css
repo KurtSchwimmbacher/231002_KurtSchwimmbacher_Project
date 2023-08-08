@@ -86,8 +86,20 @@ body{
 }
 
 .image-slider{
+    width: auto;
+    background-image: url(../assets/Thailand\ Trip\ Layout.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.image-slider2{
     width: 100%;
-    background-image: url(../assets/Home\ Layout\ Screen.png);
+    background-image: url(../assets/Greece\ trip\ Layout.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.image-slider3{
+    width: 100%;
+    background-image: url(../assets/Alaska\ Trip\ Layout.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -176,17 +188,32 @@ body{
 
 /* ================================================================================ */
 /* Trips Section */
-.card{
-    background-color: #71ABB6;
-    color: #F3F8F9;
-    font-family: 'Josefin Slab', serif;
-    border: none;
-}
-
 .card-title{
     font-family: 'Quicksand', sans-serif;
 }
 
+/* Card */
+.card{
+    border-radius: 25px 25px 50px 50px;
+    text-align: center;
+    height: 560px;
+    border: none;
+    background-color: #71ABB6;
+    color: #F3F8F9;
+    font-family: 'Josefin Slab', serif;
+}
+
+ .card-img-top{
+    border-radius: 25px;
+    width: 100%;
+    height: 280px;
+    margin: auto;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+} 
+
+/* .card-img-top.small{
+    height: 200px;
+} */
 
 
 
