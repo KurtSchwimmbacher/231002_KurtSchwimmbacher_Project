@@ -188,8 +188,25 @@ body{
 
 
 
+
+
 /* ================================================================================ */
 /* Trips Section */
+.filter-con{
+    background-color: #71ABB6;
+    text-align: center;
+    color: #F3F8F9;
+    height: 360px;
+}
+
+.filter-box{
+    margin-left: 10%;
+    width: 80%;
+    border: 2px solid #FF7F22;
+    border-radius: 15px;
+}
+
+
 .card-title{
     font-family: 'Quicksand', sans-serif;
 }
