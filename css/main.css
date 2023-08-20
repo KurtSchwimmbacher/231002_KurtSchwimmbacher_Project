@@ -233,6 +233,7 @@ body{
     border-radius: 15px;
 }
 
+
 /* Label Styling */
 .priceTagMin{
     margin-left: -7%;
@@ -266,7 +267,6 @@ body{
     position: relative;
     
   }
-  
   
   /* Sliders styling */
   input[type=range]::-webkit-slider-thumb {

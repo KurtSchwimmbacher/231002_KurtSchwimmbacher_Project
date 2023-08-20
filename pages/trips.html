@@ -8,6 +8,7 @@
     <!-- Css Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
     <!-- JS Links -->
     <!-- JQuery -->
@@ -52,10 +53,14 @@
     <div class="row filter-con mt-5 pt-5">
       <div class="container">
         <div class="filters">
-
+          
           <!-- Title -->
           <h1>Trips and Destinations</h1>
           <div class="filter-box mt-5 mb-5">
+              <i class="bi bi-chevron-compact-up close-filters"></i>
+              <i class="bi bi-chevron-compact-down open-filters"></i>
+              <p>Advanced Filters</p>
+            <div id="filterClose">
 
             <!-- Price Ranger Slider -->
             <div class="range_container">
@@ -93,13 +98,13 @@
             <div class="range_container">
               <h3 class="align-self-start mb-4">Departure Port</h3>
 
-              <select class="form-select dep_port" aria-label="Departure Port Dropdown">
+              <select class="form-select dep_port" aria-label="Departure Port Dropdown" id="departurePort">
                 <option class="dep_opt" selected>Select A Port From Below</option>
-                <option class="dep_opt" value="Cape Town">Cape Town, South Africa</option>
-                <option class="dep_opt" value="Oslo">Oslo, Norway</option>
-                <option class="dep_opt" value="Port Louis">Port Louis, Mauritius</option>
-                <option class="dep_opt" value="Havana">Havana, Cuba</option>
-                <option class="dep_opt" value="Tel-Aviv">Tel-Aviv, Isreal</option>
+                <option class="dep_opt" value="Cape Town, South Africa">Cape Town, South Africa</option>
+                <option class="dep_opt" value="Oslo, Norway">Oslo, Norway</option>
+                <option class="dep_opt" value="Port Louis, Mauritius">Port Louis, Mauritius</option>
+                <option class="dep_opt" value="Havana, Cuba">Havana, Cuba</option>
+                <option class="dep_opt" value="Tel-Aviv, Isreal">Tel-Aviv, Isreal</option>
               </select>
               <p class="mt-2 align-self-start show-duration" id="showDep">Departure Port:</p>
             </div>
@@ -107,18 +112,18 @@
 
             <!-- Departure Port Start -->
             <div class="range_container">
-              <h3 class="align-self-start mb-4">Destination Port</h3>
+              <h3 class="align-self-start mb-4">Destinations</h3>
 
-              <select class="form-select dest_port" aria-label="Destination Port Dropdown">
+              <select class="form-select dest_port" aria-label="Destination Port Dropdown" id="destinations">
                 <option class="des_opt" selected>Select A Port From Below</option>
-                <option class="des_opt" value="Thailand">Thaiand</option>
-                <option class="des_opt" value="Arctic">Arctic Peninsula</option>
-                <option class="des_opt" value="Caribbean">Caribbean Islands</option>
-                <option class="des_opt" value="West Africa">West Africa</option>
-                <option class="des_opt" value="Mediterranean">Mediterranean</option>
-                <option class="des_opt" value="Alaska">Alaska</option>
+                <option class="des_opt" value="Thailand, Maldives, Seychelles">Thailand, Maldives, Seychelles</option>
+                <option class="des_opt" value="Greenland, Iceland, Faroe Islands">Greenland, Iceland, Faroe Islands</option>
+                <option class="des_opt" value="Cayman Islands, Barbados, Aruba">Cayman Islands, Barbados, Aruba</option>
+                <option class="des_opt" value="Namibia, Cape Verde, Angola">Namibia, Cape Verde, Angola</option>
+                <option class="des_opt" value="Italy, Greece, Turkey">Italy, Greece, Turkey</option>
+                <option class="des_opt" value="Hubbard Glacier, Skagway, Juneau">Hubbard Glacier, Skagway, Juneau</option>
               </select>
-              <p class="mt-2 align-self-start show-duration" id="showDep">Destination:</p>
+              <p class="mt-2 align-self-start show-duration" id="showDest">Destination:</p>
             </div>
             <!-- Departure Port End -->
 
@@ -137,9 +142,11 @@
             <!-- Departure Port Start -->
             <div class="button_container mb-1">
               <button type="button" class="btn btn-con" id="confirmBtn">Apply Filters</button>
-              <button type="button" class="btn btn-can">Cancel</button>
+              <button type="button" class="btn btn-can" id="removeBtn">Cancel</button>
             </div>
             <!-- Departure Port End -->
+
+            </div>
 
           </div>
 
@@ -159,7 +166,7 @@
         
       </div>
 
-      <!-- Plant Card template -->
+      <!-- Trip Card template -->
       <template id="tripCardTemplate">
         <div class="col-4">
           <!-- Card Code -->
@@ -175,7 +182,7 @@
             </div>
       </div>
       </template>
-      <!-- Plant Card template -->
+      <!-- Trip Card template -->
 
     </div>
 
