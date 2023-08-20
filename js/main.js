@@ -106,6 +106,5 @@ $(document).ready(function (){
 
 
 
-//https://api.openweathermap.org/data/2.5/weather?q=pretoria&appid=8759d43fce621bb6239387dec2630ce5
 
 });

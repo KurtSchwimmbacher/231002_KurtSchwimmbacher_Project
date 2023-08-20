@@ -192,20 +192,6 @@ body{
 
 /* ================================================================================ */
 /* Trips Section */
-.filter-con{
-    background-color: #71ABB6;
-    text-align: center;
-    color: #F3F8F9;
-    height: 360px;
-}
-
-.filter-box{
-    margin-left: 10%;
-    width: 80%;
-    border: 2px solid #FF7F22;
-    border-radius: 15px;
-}
-
 
 .card-title{
     font-family: 'Quicksand', sans-serif;
@@ -229,6 +215,149 @@ body{
     margin: auto;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 } 
+
+/* ============================================================================================ */
+/* Filter Slider Section */
+
+.filter-con{
+    background-color: #71ABB6;
+    text-align: center;
+    color: #F3F8F9;
+    height: auto;
+}
+
+.filter-box{
+    margin-left: 15%;
+    width: 70%;
+    border: 3px solid #FF7F22;
+    border-radius: 15px;
+}
+
+/* Label Styling */
+.priceTagMin{
+    margin-left: -7%;
+    margin-bottom: -1.5%;
+}
+.priceTagMax{
+    margin-right: -10%;
+    margin-top: -1%;
+}
+
+.durTagMin{
+    margin-left: -7%;
+    margin-bottom: -1.5%;
+}
+.durTagMax{
+    margin-right: -10%;
+    margin-top: -1%;
+}
+
+
+
+/* Sliders styling */
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto;
+  }
+  
+  .sliders_control {
+    position: relative;
+    
+  }
+  
+  
+  /* Sliders styling */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #71ABB6;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #F3F8F9;
+    cursor: pointer;
+  }
+  
+  
+  /* Slider interact styling */
+  input[type=range]::-webkit-slider-thumb:hover {
+    background: #FF7F22;
+  }
+  
+  
+  input[type=range]::-webkit-slider-thumb:active {
+    box-shadow: inset 0 0 3px #71ABB6, 0 0 9px #71ABB6;
+    -webkit-box-shadow: inset 0 0 3px #71ABB6, 0 0 9px #71ABB6;
+  }
+  
+  
+  input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 3px;
+    border-radius: 15px;
+    width: 100%;
+    margin-left: -50%;
+    position: absolute;
+    background-color: #F3F8F9;
+    pointer-events: none;
+  }
+  
+  #fromSlider {
+    height: 0;
+    z-index: 1;
+  }
+
+/* ==================================================================================== */
+
+.dep_port, .dest_port{
+    background-color: #71ABB6;
+    color: #F3F8F9;
+    border: 2px solid #F3F8F9;
+    background-image: url("../assets/chevron-down.svg");
+}
+
+.des_opt, .dep_opt{
+    font-family: 'Josefin Slab', serif;
+}
+
+.check_label{
+    margin-top: -3px;
+    margin-left: -80%;
+    font-family: 'Josefin Slab', serif;
+    font-size: 24px;
+}
+
+.button_container{
+    width: 100%;
+}
+
+.btn{
+    width: 30%;
+    height: 50px;
+    border-radius: 100px;
+    margin: 7%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-family: 'Josefin Slab', serif;
+}
+
+.btn-con, .btn-can{
+    background-color: #F3F8F9;
+    color: #71ABB6;
+    border: 2px solid #71ABB6;
+}
+
+.btn-con:hover, .btn-can:hover{
+    background-color: #FF7F22;
+    border: 2px solid #F3F8F9;
+}
+
+.btn-con:active, .btn-can:active{
+    background-color: #F3F8F9;
+    border: 2px solid #FF7F22;
+}
 
 /* .card-img-top.small{
     height: 200px;

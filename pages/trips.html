@@ -52,10 +52,97 @@
     <div class="row filter-con mt-5 pt-5">
       <div class="container">
         <div class="filters">
+
+          <!-- Title -->
           <h1>Trips and Destinations</h1>
-          <div class="filter-box mt-5">
-            
+          <div class="filter-box mt-5 mb-5">
+
+            <!-- Price Ranger Slider -->
+            <div class="range_container">
+              <h3 class="align-self-start mb-4">Price</h3>
+
+              <p class="priceTagMin align-self-start">$0</p>
+              <div class="sliders_control">
+
+                <input id="fromSlider" type="range" value="1000" min="0" max="45000"/>
+                <input id="toSlider" type="range" value="22500" min="0" max="45000"/>
+
+              </div>
+              <p class="priceTagMax align-self-end">$45 000</p>
+              <p class="align-self-start show-price" id="showPrice">Price:</p>
+            </div>
+            <!-- Price Range Slider End -->
+              
+            <!-- Duration Ranger Slider -->
+            <div class="range_container">
+              <h3 class="align-self-start mb-4">Duration</h3>
+
+              <p class="durTagMin align-self-start">0 Days</p>
+              <div class="sliders_control">
+
+                <input id="fromSlider" type="range" value="1" min="0" max="31"/>
+                <input id="toSlider" type="range" value="15" min="0" max="31"/>
+
+              </div>
+              <p class="durTagMax align-self-end">31 Days</p>
+              <p class="align-self-start show-duration" id="showDur">Duration:</p>
+            </div>
+            <!-- Duration Range Slider End -->
+
+            <!-- Departure Port Start -->
+            <div class="range_container">
+              <h3 class="align-self-start mb-4">Departure Port</h3>
+
+              <select class="form-select dep_port" aria-label="Departure Port Dropdown">
+                <option class="dep_opt" selected>Select A Port From Below</option>
+                <option class="dep_opt" value="Cape Town">Cape Town, South Africa</option>
+                <option class="dep_opt" value="Oslo">Oslo, Norway</option>
+                <option class="dep_opt" value="Port Louis">Port Louis, Mauritius</option>
+                <option class="dep_opt" value="Havana">Havana, Cuba</option>
+                <option class="dep_opt" value="Tel-Aviv">Tel-Aviv, Isreal</option>
+              </select>
+              <p class="mt-2 align-self-start show-duration" id="showDep">Departure Port:</p>
+            </div>
+            <!-- Departure Port End -->
+
+            <!-- Departure Port Start -->
+            <div class="range_container">
+              <h3 class="align-self-start mb-4">Destination Port</h3>
+
+              <select class="form-select dest_port" aria-label="Destination Port Dropdown">
+                <option class="des_opt" selected>Select A Port From Below</option>
+                <option class="des_opt" value="Thailand">Thaiand</option>
+                <option class="des_opt" value="Arctic">Arctic Peninsula</option>
+                <option class="des_opt" value="Caribbean">Caribbean Islands</option>
+                <option class="des_opt" value="West Africa">West Africa</option>
+                <option class="des_opt" value="Mediterranean">Mediterranean</option>
+                <option class="des_opt" value="Alaska">Alaska</option>
+              </select>
+              <p class="mt-2 align-self-start show-duration" id="showDep">Destination:</p>
+            </div>
+            <!-- Departure Port End -->
+
+            <!-- Departure Port Start -->
+            <div class="range_container">
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="round trip" id="roundTripCheckBox">
+                <label class="check_label form-check-label" for="roundTripCheckBox">
+                  Round-trip
+                </label>
+              </div>
+            </div>
+            <!-- Departure Port End -->
+
+            <!-- Departure Port Start -->
+            <div class="button_container mb-1">
+              <button type="button" class="btn btn-con">Apply Filters</button>
+              <button type="button" class="btn btn-can">Cancel</button>
+            </div>
+            <!-- Departure Port End -->
+
           </div>
+
         </div>
       </div>
     </div>
