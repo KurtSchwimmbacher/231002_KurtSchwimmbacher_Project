@@ -7,7 +7,7 @@ const tripArr = [
         destinations: "Thailand, Maldives, Seychelles",
         duration: "14 Days",
         departurePort: "Port Louis, Mauritius",
-        price: "$3 534",
+        price: 3534,
         roundTrip: "true"
     },
     {
@@ -16,7 +16,7 @@ const tripArr = [
         destinations: "Greenland, Iceland, Faroe Islands",
         duration: "15 Days",
         departurePort: "Oslo, Norway",
-        price: "$5 847",
+        price: 5847,
         roundTrip: "true"
     },
     {
@@ -25,7 +25,7 @@ const tripArr = [
         destinations: "Cayman Islands, Barbados, Aruba",
         duration: "11 Days",
         departurePort: "Havana, Cuba",
-        price: "$3 134",
+        price: 3134,
         roundTrip: "true"
     },     
     {
@@ -34,7 +34,7 @@ const tripArr = [
         destinations: "Namibia, Cape Verde, Angola ",
         duration: "13 Days",
         departurePort: "Cape Town, South Africa",
-        price: "$4 934",
+        price: 4934,
         roundTrip: "true"
     },
     {
@@ -43,7 +43,7 @@ const tripArr = [
         destinations: "Italy, Greece, Turkey",
         duration: "9 Days",
         departurePort: "Tel-Aviv, Isreal",
-        price: "$1 834",
+        price: 1834,
         roundTrip: "true"
     },
     {
@@ -52,7 +52,7 @@ const tripArr = [
         destinations: "Hubbard Glacier, Skagway, Juneau",
         duration: "9 Days",
         departurePort: "Oslo, Norway",
-        price: "$7 789",
+        price: 7789,
         roundTrip: "true"
     }
 ];
@@ -74,8 +74,8 @@ function loadTrips (tripsToShow){
     // Clear all cards before loading plants again
     $("#tripContainer").empty();
 
-    for(let i = 0; i < tripArr.length; i++){
-        const currentTrip = tripArr[i];
+    for(let i = 0; i < tripsToShow.length; i++){
+        const currentTrip = tripsToShow[i];
 
         // ===============================================================
         // load trips on trip page
@@ -92,7 +92,7 @@ function loadTrips (tripsToShow){
         $(current).find("#destination").text("Destinations: " + currentTrip.destinations);
         $(current).find("#duration").text("Duration: " + currentTrip.duration);
         $(current).find("#departure").text("Departure Port: " + currentTrip.departurePort);
-        $(current).find("#price").text("Price: " + currentTrip.price);
+        $(current).find("#price").text("Price: $" + currentTrip.price);
         $(current).find(".card-img-top").attr("src","../assets/" + currentTrip.picture);
 
 
@@ -108,33 +108,47 @@ function readSliderChange(){
     $("#fromSliderPrice").on('input',function(){
         let min = $("#fromSliderPrice").val();
         let max = $("#toSliderPrice").val();
-        console.log("min: "+min +" max: "+max)
         $("#showPrice").text("Price: $"+min +" - $"+max);
     });
 
     $("#toSliderPrice").on('input',function(){
         let min = $("#fromSliderPrice").val();
         let max = $("#toSliderPrice").val();
-        console.log("min: "+min +" max: "+max)
         $("#showPrice").text("Price: $"+min +" - $"+max);
     });
 
     $("#fromSliderDuration").on('input',function(){
         let minD = $("#fromSliderDuration").val();
         let maxD = $("#toSliderDuration").val();
-        console.log("min: "+minD +" max: "+maxD)
         $("#showDur").text("Days: "+minD +" - "+maxD);
     });
 
     $("#toSliderDuration").on('input',function(){
         let minD = $("#fromSliderDuration").val();
         let maxD = $("#toSliderDuration").val();
-        console.log("min: "+minD +" max: "+maxD)
         $("#showDur").text("Days: "+minD +" - "+maxD);
     });
 
 }
 
+
+function filterTrips(){
+    let filteredSortedTrips= [];
+
+
+    // filter by price
+    // get range
+    let min = $("#fromSliderPrice").val();
+    let max = $("#toSliderPrice").val();
+    console.log(min);
+    console.log(max);
+    // check for trips within price range
+    filteredSortedTrips = tripArr.filter(trip =>trip.price > min && trip.price < max);
+
+    console.log(filteredSortedTrips);
+    
+    loadTrips(filteredSortedTrips);
+}
 
 $(document).ready(function (){
 
@@ -143,16 +157,25 @@ $(document).ready(function (){
     // Filters dom manipulation
     let min = $("#fromSliderPrice").attr("value");
     let max = $("#toSliderPrice").attr("value");
-    console.log("min: "+min +" max: "+max)
     $("#showPrice").text("Price: $"+min +" - $"+max);
 
     // Filters dom manipulation
     let minD = $("#fromSliderDuration").attr("value");
     let maxD = $("#toSliderDuration").attr("value");
-    console.log("min: "+minD +" max: "+maxD)
     $("#showDur").text("Days: "+minD +" - "+maxD);
 
+    //update slider values to dom
     readSliderChange();
+
+
+    // Apply filters to Cards
+    $("#confirmBtn").click(function(){
+
+        filterTrips();
+        
+        // filterSortPlants()
+    });
+
 
 });
 
