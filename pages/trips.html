@@ -49,7 +49,7 @@
     </nav>    
 
     <!-- ===================================================================================== -->
-    <!-- filters -->
+    <!-- advanced filters -->
     <div class="row filter-con mt-5 pt-5">
       <div class="container">
         <div class="filters">
@@ -152,8 +152,52 @@
 
         </div>
       </div>
+      
     </div>
+    <!-- ===================================================================================== -->
+     
+    <!-- Basic Filters and Sorting -->
+    <!-- ===================================================================================== -->
+    <div class="row mt-5">
+      <div class="simple-filter-con">
+        <p class="simple-filter">Simple Filters</p>
+          <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="filterRadio" id="allTripsFilter" value="" autocomplete="off" checked>
+            <label class="btn btn-outline-success" for="allTripsFilter">All Trips</label>
+          
+            <input type="radio" class="btn-check" name="filterRadio" id="shortDurFilter" value="short" autocomplete="off">
+            <label class="btn btn-outline-success" for="shortDurFilter"><i class="bi bi-alarm"></i> Short Duration</label>
+          
+            <input type="radio" class="btn-check" name="filterRadio" id="longDurFilter" value="long" autocomplete="off">
+            <label class="btn btn-outline-success" for="longDurFilter"><i class="bi bi-calendar2-event"></i> Long Duration</label>
+  
+            <input type="radio" class="btn-check" name="filterRadio" id="singleDestFilter" value="single" autocomplete="off">
+            <label class="btn btn-outline-success" for="singleDestFilter"><i class="bi bi-house"></i> Single Destination</label>
 
+            <input type="radio" class="btn-check" name="filterRadio" id="multiDestFilter" value="multi" autocomplete="off">
+            <label class="btn btn-outline-success" for="multiDestFilter"><i class="bi bi-houses"></i> Multi Destinations</label>
+
+            <input type="radio" class="btn-check" name="filterRadio" id="rowBoatFilter" value="Row" autocomplete="off">
+            <label class="btn btn-outline-success" for="rowBoatFilter"><i class="bi bi-tag"></i> Row Boat Special</label>
+          </div>
+      </div>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="sorting-con">
+        <p class="simple-filter">Sorting</p>
+        <div class="btn-group sorting-grp" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="sortRadio" id="defaultSort" value="date added" autocomplete="off" checked>
+          <label class="btn btn-outline-secondary" for="defaultSort"> <i class="bi bi-calendar4"></i> Newest to Oldest</label>
+        
+          <input type="radio" class="btn-check" name="sortRadio" id="priceSort" value="low to high" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="priceSort"> <i class="bi bi-sort-down-alt"></i> Price: Low to High </label>
+          
+          <input type="radio" class="btn-check" name="sortRadio" id="alphaSort" value="alphabetically" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="alphaSort"> <i class="bi bi-sort-alpha-down"></i> alphabetically: A to Z </label>
+        </div>
+      </div>
+    </div>
 
     <!-- ====================================================================================== -->
     <!-- Trips Cards -->

@@ -82,7 +82,6 @@ function loadTrips (tripsToShow){
 
         // Create a variable that contains the most recently added card
         let current = $("#tripContainer").children().eq(i);
-        console.log(i);
         
         // Set the content for the current trip card from the trip array
         $(current).find("#tripName").text(currentTrip.name);
@@ -155,6 +154,8 @@ function readSliderChange(){
 function filterTrips(){
     let filteredSortedTrips= [];
 
+    // advanced filters
+    // ================================================================================================
     // get filter amounts
     // filter by price
     let min = $("#fromSliderPrice").val();
@@ -210,10 +211,32 @@ function filterTrips(){
          console.log("round trip: "+roundTrip)
          filteredSortedTrips = tripArr.filter(trip =>trip.price > min && trip.price < max && trip.duration > minD && trip.duration < maxD && trip.destinations === destinations && trip.departurePort === departurePort && trip.roundTrip === true);
     }
+    // ================================================================================================
 
-    console.log(filteredSortedTrips);
+
+    // call load trips function with sorted array parameter
     loadTrips(filteredSortedTrips);
 }
+// ================================================================================================
+
+// ================================================================================================
+let cloudIcon = '';
+$.ajax({
+    type:"GET",
+    url:"https://api.openweathermap.org/data/2.5/weather?q=Phuket&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
+    success: function(data){
+        temp = data;
+        console.log(temp.main.temp);
+        console.log(temp.clouds.all)
+
+        if(temp.clouds.all > 30){
+            cloudIcon ='<i class="bi bi-cloud-sun"></i>';
+        }
+    }
+}).done(function(){
+    $("#cloudInfo").html(cloudIcon);
+    $("#weatherInfo").text("Temperature: "+temp.main.temp+ "°C");
+});
 // ================================================================================================
 
 // Document Ready
@@ -222,7 +245,9 @@ $(document).ready(function (){
     loadTrips(tripArr);
 
 // ================================================================================================
-    $(".open-filters").hide();
+    
+    $(".close-filters").hide();
+    $("#filterClose").hide();
     // Close Filter Section
     $(".close-filters").click(function(){
         $("#filterClose").slideUp(800);

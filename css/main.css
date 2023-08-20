@@ -361,11 +361,30 @@ body{
     border: 2px solid #FF7F22;
 }
 
-/* .card-img-top.small{
-    height: 200px;
-} */
+/* ======================================================================================== */
+/* Basic filters */
 
+.btn-outline-success,.btn-outline-secondary{
+    margin: 0;
+    width: 200px;
+    height: 35px;
+    border-radius: 12px;
+    text-align: center;
+}
 
+.btn-group{
+    margin-left: 10%;
+}
+
+.sorting-grp{
+    margin-left: 30.5%;
+}
+
+.simple-filter{
+    text-align: center;
+    color: #71ABB6;
+    font-size: 20px;
+}
 
 
 
