@@ -305,6 +305,8 @@ body{
     pointer-events: none;
   }
   
+  
+
   #fromSlider {
     height: 0;
     z-index: 1;

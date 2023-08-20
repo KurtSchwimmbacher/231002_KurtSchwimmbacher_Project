@@ -100,11 +100,60 @@ function loadTrips (tripsToShow){
 
 }
 
+
+
+// =========================================================================================
+// read value from Price Slider
+function readSliderChange(){
+    $("#fromSliderPrice").on('input',function(){
+        let min = $("#fromSliderPrice").val();
+        let max = $("#toSliderPrice").val();
+        console.log("min: "+min +" max: "+max)
+        $("#showPrice").text("Price: $"+min +" - $"+max);
+    });
+
+    $("#toSliderPrice").on('input',function(){
+        let min = $("#fromSliderPrice").val();
+        let max = $("#toSliderPrice").val();
+        console.log("min: "+min +" max: "+max)
+        $("#showPrice").text("Price: $"+min +" - $"+max);
+    });
+
+    $("#fromSliderDuration").on('input',function(){
+        let minD = $("#fromSliderDuration").val();
+        let maxD = $("#toSliderDuration").val();
+        console.log("min: "+minD +" max: "+maxD)
+        $("#showDur").text("Days: "+minD +" - "+maxD);
+    });
+
+    $("#toSliderDuration").on('input',function(){
+        let minD = $("#fromSliderDuration").val();
+        let maxD = $("#toSliderDuration").val();
+        console.log("min: "+minD +" max: "+maxD)
+        $("#showDur").text("Days: "+minD +" - "+maxD);
+    });
+
+}
+
+
 $(document).ready(function (){
 
     loadTrips(tripArr);
 
+    // Filters dom manipulation
+    let min = $("#fromSliderPrice").attr("value");
+    let max = $("#toSliderPrice").attr("value");
+    console.log("min: "+min +" max: "+max)
+    $("#showPrice").text("Price: $"+min +" - $"+max);
 
+    // Filters dom manipulation
+    let minD = $("#fromSliderDuration").attr("value");
+    let maxD = $("#toSliderDuration").attr("value");
+    console.log("min: "+minD +" max: "+maxD)
+    $("#showDur").text("Days: "+minD +" - "+maxD);
 
+    readSliderChange();
 
 });
+
+
