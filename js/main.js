@@ -234,7 +234,6 @@ function basicFilterSortTrips(){
     let filterSortTripArr = [];
 
         //Filter Trips
-
         if(appliedFilter){
             if(appliedFilter == "short"){
                 filterSortTripArr = tripArr.filter(trip =>trip.duration < 6);
@@ -249,7 +248,10 @@ function basicFilterSortTrips(){
                 filterSortTripArr = tripArr.filter(plant =>plant.destinations.split(",").length > 1);
             }
             else if(appliedFilter == "row"){
-                filterSortTripArr = tripArr.filter(plant =>plant.price.split(",").length > 1);
+                arr = tripArr.sort(function (a, b) { 
+                     return b - a; 
+                });
+                filterSortTripArr = arr.slice(Math.max(arr.length - 5, 0))
             }
             else{
                 filterSortTripArr = tripArr.filter(plant =>plant.lightAmount == appliedFilter);
