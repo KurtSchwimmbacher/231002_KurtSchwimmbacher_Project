@@ -261,6 +261,9 @@ function basicFilterSortTrips(){
             filterSortTripArr = tripArr;
         }
 
+        
+
+
         loadTrips(filterSortTripArr);
 }
 
