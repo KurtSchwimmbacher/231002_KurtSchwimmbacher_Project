@@ -219,6 +219,7 @@ function filterTrips(){
 }
 // ================================================================================================
 
+// Thailand Weather
 // ================================================================================================
 let cloudIcon = '';
 $.ajax({
@@ -226,18 +227,121 @@ $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?q=Phuket&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
     success: function(data){
         temp = data;
-        console.log(temp.main.temp);
-        console.log(temp.clouds.all)
+        console.log("Thai temp "+temp.main.temp);
+        console.log("Thai clouds "+temp.clouds.all);
+        console.log("Thai rain "+temp.rain);
+        
+        let rainfall = 0.13;
 
-        if(temp.clouds.all > 30){
-            cloudIcon ='<i class="bi bi-cloud-sun"></i>';
+        if(temp.rain === undefined){
+            if(temp.clouds.all < 30){
+                cloudIcon ='<img src="assets/weather/cloud-sun-alt-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(temp.clouds.all > 30 && temp.clouds.all < 70){
+                cloudIcon ='<img src="assets/weather/cloud-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(temp.clouds.all > 70){
+                cloudIcon ='<img src="assets/weather/clouds-svgrepo-com.svg" style="width: 24px;">';
+            }
         }
+        else if(temp.rain != undefined){
+            if(rainfall < 2){
+                cloudIcon ='<img src="assets/weather/cloud-rain-alt-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(rainfall > 2){
+                cloudIcon ='<img src="assets/weather/cloud-rain-alt-1-svgrepo-com.svg" style="width: 24px;">';
+            }
+        }
+        
     }
 }).done(function(){
-    $("#cloudInfo").html(cloudIcon);
-    $("#weatherInfo").text("Temperature: "+temp.main.temp+ "°C");
+    $("#cloudInfoThai").html(cloudIcon);
+    $("#weatherInfoThai").text(temp.main.temp+ "°C");
 });
 // ================================================================================================
+// Greece Weather
+// ================================================================================================
+let cloudIconG = '';
+$.ajax({
+    type:"GET",
+    url:"https://api.openweathermap.org/data/2.5/weather?q=Athens&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
+    success: function(data){
+        temp = data;
+        console.log("Athens temp "+temp.main.temp);
+        console.log("Athens clouds "+temp.clouds.all);
+        console.log("Athens rain "+temp.rain);
+        
+        let rainfall = 0.13;
+
+        if(temp.rain === undefined){
+            if(temp.clouds.all < 30){
+                cloudIconG ='<img src="assets/weather/cloud-sun-alt-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(temp.clouds.all > 30 && temp.clouds.all < 70){
+                cloudIconG ='<img src="assets/weather/cloud-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(temp.clouds.all > 70){
+                cloudIconG ='<img src="assets/weather/clouds-svgrepo-com.svg" style="width: 24px;">';
+            }
+        }
+        else if(temp.rain != undefined){
+            if(rainfall < 2){
+                cloudIconG ='<img src="assets/weather/cloud-rain-alt-svgrepo-com.svg" style="width: 24px;">';
+            }
+            else if(rainfall > 2){
+                cloudIconG ='<img src="assets/weather/cloud-rain-alt-1-svgrepo-com.svg" style="width: 24px;">';
+            }
+        }
+        
+    }
+}).done(function(){
+    $("#cloudInfoGreece").html(cloudIconG);
+    $("#weatherInfoGreece").text(temp.main.temp+ "°C");
+});
+// ================================================================================================
+// Alaska Weather
+// ================================================================================================
+let cloudIconA = '';
+$.ajax({
+    type:"GET",
+    url:"https://api.openweathermap.org/data/2.5/weather?q=Anchorage&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
+    success: function(data){
+        temp = data;
+        console.log("Alaska temp "+temp.main.temp);
+        console.log("Alaska clouds "+temp.clouds.all);
+        console.log("Alaska rain "+temp.rain);
+        
+
+        // if(temp.rain === undefined){
+            if(temp.clouds.all < 30){
+                cloudIconA ='<img src="assets/weather/cloud-sun-alt-svgrepo-com.svg" style="width: 24px;">';
+                console.log("Alaska low clouds");
+            }
+            else if(temp.clouds.all > 30 && temp.clouds.all < 70){
+                cloudIconA ='<img src="assets/weather/cloud-svgrepo-com.svg" style="width: 24px;">';
+                console.log("Alaska mid clouds");
+            }
+            else if(temp.clouds.all > 70){
+                cloudIconA ='<img src="assets/weather/clouds-svgrepo-com.svg" style="width: 24px;">';
+                console.log("Alaska low clouds");
+            }
+        //}
+        // else if(temp.rain != undefined){
+        //     if(rainfall < 2){
+        //         cloudIconA ='<img src="assets/weather/cloud-rain-alt-svgrepo-com.svg" style="width: 24px;">';
+        //     }
+        //     else if(rainfall > 2){
+        //         cloudIconA ='<img src="assets/weather/cloud-rain-alt-1-svgrepo-com.svg" style="width: 24px;">';
+        //     }
+        // }
+        
+    }
+}).done(function(){
+    $("#cloudInfoAlaska").html(cloudIconA);
+    $("#weatherInfoAlaska").text(temp.main.temp+ "°C");
+});
+// ================================================================================================
+
 
 // Document Ready
 $(document).ready(function (){
