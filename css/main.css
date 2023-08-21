@@ -392,6 +392,23 @@ body{
 /* footer section */
 footer{
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: #F3F8F9;
+}
+
+.footer-brand{
+    font-size: 24px;
+}
+.footer-brand img{
+    width: 44px;
+    height: 44px;
+}
+
+.footer-links{
+    float: right;
+}
+.footer-links a{
+    width: 24px;
+    height: 24px;
+    color: #71ABB6;
 }

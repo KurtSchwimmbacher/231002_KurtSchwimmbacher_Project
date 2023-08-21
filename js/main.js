@@ -54,6 +54,15 @@ const tripArr = [
         departurePort: "Oslo, Norway",
         price: 7789,
         roundTrip: false
+    },
+    {
+        name: "Greece Cruise",
+        picture: "../assets/trips/Greece Trip.png",
+        destinations: "Athens Greece",
+        duration: 9,
+        departurePort: "Tel-Aviv, Isreal",
+        price: 600,
+        roundTrip: false
     }
 ];
 
@@ -151,7 +160,7 @@ function readSliderChange(){
 // ================================================================================================
 
 // ================================================================================================
-function filterTrips(){
+function advancedFilterTrips(){
     let filteredSortedTrips= [];
 
     // advanced filters
@@ -218,6 +227,44 @@ function filterTrips(){
     loadTrips(filteredSortedTrips);
 }
 // ================================================================================================
+
+
+// ================================================================================================
+function basicFilterSortTrips(){
+    let filterSortTripArr = [];
+
+        //Filter Trips
+
+        if(appliedFilter){
+            if(appliedFilter == "short"){
+                filterSortTripArr = tripArr.filter(trip =>trip.duration < 6);
+            }
+            else if(appliedFilter == "long"){
+                filterSortTripArr = tripArr.filter(plant =>plant.duration > 5);
+            }
+            else if(appliedFilter == "single"){
+                filterSortTripArr = tripArr.filter(plant =>plant.destinations.split(",").length === 1);
+            }
+            else if(appliedFilter == "multi"){
+                filterSortTripArr = tripArr.filter(plant =>plant.destinations.split(",").length > 1);
+            }
+            else if(appliedFilter == "row"){
+                filterSortTripArr = tripArr.filter(plant =>plant.price.split(",").length > 1);
+            }
+            else{
+                filterSortTripArr = tripArr.filter(plant =>plant.lightAmount == appliedFilter);
+            }
+        }   
+        else{
+            filterSortTripArr = tripArr;
+        }
+
+        loadTrips(filterSortTripArr);
+}
+
+
+// ================================================================================================
+
 
 // Thailand Weather
 // ================================================================================================
@@ -385,7 +432,7 @@ $(document).ready(function (){
     // Apply filters to Cards
     $("#confirmBtn").click(function(){
 
-        filterTrips();
+        advancedFilterTrips();
     });
 
       // Remove filters to Cards
@@ -397,6 +444,25 @@ $(document).ready(function (){
         loadTrips(tripArr);
     });
 // ================================================================================================
+
+// Filter buttons
+// ================================================================================================
+    $("input[name= 'filterRadio']").click(function(){
+        appliedFilter = $(this).attr('value');
+
+        console.log(appliedFilter);
+        basicFilterSortTrips();
+    });
+
+
+    $("input[name = 'sortRadio']").click( function(){
+        appliedSort = $(this).attr('value');
+
+        console.log(appliedSort);
+        basicFilterSortTrips();
+    });
+// ================================================================================================
+
 
 });
 
