@@ -281,9 +281,7 @@ $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?q=Phuket&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
     success: function(data){
         temp = data;
-        console.log("Thai temp "+temp.main.temp);
-        console.log("Thai clouds "+temp.clouds.all);
-        console.log("Thai rain "+temp.rain);
+
         
         let rainfall = 0.13;
 
@@ -321,11 +319,7 @@ $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?q=Athens&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
     success: function(data){
         temp = data;
-        console.log("Athens temp "+temp.main.temp);
-        console.log("Athens clouds "+temp.clouds.all);
-        console.log("Athens rain "+temp.rain);
         
-        let rainfall = 0.13;
 
         if(temp.rain === undefined){
             if(temp.clouds.all < 30){
@@ -361,10 +355,6 @@ $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?q=Anchorage&appid=8759d43fce621bb6239387dec2630ce5&units=metric",
     success: function(data){
         temp = data;
-        console.log("Alaska temp "+temp.main.temp);
-        console.log("Alaska clouds "+temp.clouds.all);
-        console.log("Alaska rain "+temp.rain);
-        
 
         // if(temp.rain === undefined){
             if(temp.clouds.all < 30){
@@ -415,8 +405,19 @@ $(document).ready(()=>{
    
            // $(this).find($(".card-img-top")).toggleClass("small");
        });
-   
+    // ================================================================================================
 
+
+    // Change Logo on Hover
+    // ================================================================================================
+    $(".navbar-brand").on("mouseenter", function(){
+        $("#imgLogo").attr("src","assets/Logo Hover.svg");
+    });
+
+    $(".navbar-brand").on("mouseleave", function(){
+        $("#imgLogo").attr("src","assets/Logo Main.svg");
+    });
+        // ================================================================================================
 
 // ================================================================================================
     
@@ -486,6 +487,10 @@ $(document).ready(()=>{
 // ================================================================================================
 
 
+// logo must change on hover
+// add tooltips for card on hovers maybe
+// save tickets to checkout page
+// add readme from week 7 add link to demo video in readme
 
 
 });
