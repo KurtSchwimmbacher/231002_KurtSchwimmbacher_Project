@@ -367,15 +367,12 @@ $.ajax({
         // if(temp.rain === undefined){
             if(temp.clouds.all < 30){
                 cloudIconA ='<img src="assets/weather/cloud-sun-alt-svgrepo-com.svg" style="width: 24px;">';
-                console.log("Alaska low clouds");
             }
             else if(temp.clouds.all > 30 && temp.clouds.all < 70){
                 cloudIconA ='<img src="assets/weather/cloud-svgrepo-com.svg" style="width: 24px;">';
-                console.log("Alaska mid clouds");
             }
             else if(temp.clouds.all > 70){
                 cloudIconA ='<img src="assets/weather/clouds-svgrepo-com.svg" style="width: 24px;">';
-                console.log("Alaska low clouds");
             }
         //}
         // else if(temp.rain != undefined){
@@ -396,7 +393,8 @@ $.ajax({
 
 
 // Document Ready
-$(document).ready(function (){
+$(document).ready(()=>{
+
 
     loadTrips(tripArr);
 
@@ -447,6 +445,7 @@ $(document).ready(function (){
         $("#destinations").prop('selectedIndex',0);
         $("#departurePort").prop('selectedIndex',0);
         loadTrips(tripArr);
+        
     });
 // ================================================================================================
 
@@ -455,7 +454,6 @@ $(document).ready(function (){
     $("input[name= 'filterRadio']").click(function(){
         appliedFilter = $(this).attr('value');
 
-        console.log(appliedFilter);
         basicFilterSortTrips();
     });
 
@@ -463,10 +461,26 @@ $(document).ready(function (){
     $("input[name = 'sortRadio']").click( function(){
         appliedSort = $(this).attr('value');
 
-        console.log(appliedSort);
         basicFilterSortTrips();
     });
 // ================================================================================================
+
+
+ $(".btn-dark").hide();
+ $(".ticket-number").hide();
+
+// card on click
+// ================================================================================================
+    $("#tripContainer").on('click','.card-img-top',function(){
+        $(this).parent().find('#duration').toggle();
+        $(this).parent().find("#departure").toggle();
+
+        $(this).parent().find(".ticket-number").toggle();
+        $(this).parent().find("#bookTrip").toggle();
+
+        // $(this).find($(".card-img-top")).toggleClass("small");
+    });
+
 
 
 });

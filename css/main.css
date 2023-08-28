@@ -193,6 +193,10 @@ body{
 /* ================================================================================ */
 /* Trips Section */
 
+.card-img-top.small{
+    height: 200px;
+}
+
 .card-title{
     font-family: 'Quicksand', sans-serif;
 }
