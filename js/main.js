@@ -100,6 +100,8 @@ function loadTrips (tripsToShow){
         $(current).find("#price").text("Price: $" + currentTrip.price);
         $(current).find(".card-img-top").attr("src","../assets/" + currentTrip.picture);
 
+        $(current).find(".ticket-number").hide();
+        $(current).find("#bookTrip").hide();
 
     }
 
@@ -397,6 +399,24 @@ $(document).ready(()=>{
 
 
     loadTrips(tripArr);
+    
+    $(".btn-dark").hide();
+    $(".ticket-number").hide();
+
+   
+   // card on click
+   // ================================================================================================
+       $("#tripContainer").on('click','.card-img-top',function(){
+           $(this).parent().find('#duration').toggle();
+           $(this).parent().find("#departure").toggle();
+   
+           $(this).parent().find(".ticket-number").toggle();
+           $(this).parent().find("#bookTrip").toggle();
+   
+           // $(this).find($(".card-img-top")).toggleClass("small");
+       });
+   
+
 
 // ================================================================================================
     
@@ -465,21 +485,6 @@ $(document).ready(()=>{
     });
 // ================================================================================================
 
-
- $(".btn-dark").hide();
- $(".ticket-number").hide();
-
-// card on click
-// ================================================================================================
-    $("#tripContainer").on('click','.card-img-top',function(){
-        $(this).parent().find('#duration').toggle();
-        $(this).parent().find("#departure").toggle();
-
-        $(this).parent().find(".ticket-number").toggle();
-        $(this).parent().find("#bookTrip").toggle();
-
-        // $(this).find($(".card-img-top")).toggleClass("small");
-    });
 
 
 
