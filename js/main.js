@@ -383,7 +383,7 @@ $.ajax({
 });
 // ================================================================================================
 
-
+// ================================================================================================
 // Document Ready
 $(document).ready(()=>{
 
@@ -487,8 +487,6 @@ $(document).ready(()=>{
 // ================================================================================================
 
 
-// logo must change on hover
-// add tooltips for card on hovers maybe
 // save tickets to checkout page
 // add readme from week 7 add link to demo video in readme
 
