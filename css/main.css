@@ -212,6 +212,12 @@ body{
     font-family: 'Josefin Slab', serif;
 }
 
+.card.alternate{
+    background-color: #F3F8F9;
+    color: #71ABB6;
+    border: 2px solid #FF7F22;
+}
+
  .card-img-top{
     border-radius: 25px;
     width: 100%;

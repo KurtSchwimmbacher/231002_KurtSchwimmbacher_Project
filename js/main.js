@@ -402,8 +402,9 @@ $(document).ready(()=>{
    
            $(this).parent().find(".ticket-number").toggle();
            $(this).parent().find("#bookTrip").toggle();
+
+           $(this).parent().toggleClass("alternate");
    
-           // $(this).find($(".card-img-top")).toggleClass("small");
        });
     // ================================================================================================
 
