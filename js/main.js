@@ -383,6 +383,17 @@ $.ajax({
 });
 // ================================================================================================
 
+
+
+// store trips into local storage
+// ================================================================================================
+storeTrip = (tripArr) =>{
+    let tripData = JSON.stringify(tripArr);
+    localStorage.setItem("TripBooking",tripData);
+    window.location.href = 'checkout.html';
+}
+// ================================================================================================
+
 // ================================================================================================
 // Document Ready
 $(document).ready(()=>{
@@ -407,6 +418,14 @@ $(document).ready(()=>{
    
        });
     // ================================================================================================
+
+       $(".btn-dark").on('click',function(){
+            console.log("button on click works")
+            let name = $(this).parent().find("#tripName").text();
+            let dest = $(this).parent().find("#destination").text();
+       });
+
+
 
 
     // Change Logo on Hover
@@ -493,5 +512,8 @@ $(document).ready(()=>{
 
 
 });
+
+
+
 
 
