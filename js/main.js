@@ -415,14 +415,49 @@ $(document).ready(()=>{
            $(this).parent().find("#bookTrip").toggle();
 
            $(this).parent().toggleClass("alternate");
+           $(this).toggleClass("small");
    
        });
     // ================================================================================================
 
        $(".btn-dark").on('click',function(){
-            console.log("button on click works")
-            let name = $(this).parent().find("#tripName").text();
-            let dest = $(this).parent().find("#destination").text();
+
+            // name
+            let objName = $(this).parent().find("#tripName").text();
+
+            // image
+            let img = $(this).parent().find("#cardImg").attr('src');
+            console.log(img);
+
+            // destinations
+            let objDest = $(this).parent().find("#destination").text();
+
+            // duration
+            let objDur = $(this).parent().find("#duration").text();
+
+            // departure
+            let objDep = $(this).parent().find("#departure").text();
+
+            // get the price
+            let priceArr = $(this).parent().find("#price").text().split("$");
+            let objPrice = priceArr[1];
+                    
+            // get number of tickets
+            let objTickets = $(this).parent().find("#ticketNum").val();
+
+        //roundtrip still needed
+
+        let tripObj ={
+            name: objName,
+            picture: "../assets/trips/Ko Phi Phi of Thailand.jpg",
+            destinations: "Thailand, Maldives, Seychelles",
+            duration: 14,
+            departurePort: "Port Louis, Mauritius",
+            price: 3534,
+            roundTrip: true
+        }
+
+
        });
 
 

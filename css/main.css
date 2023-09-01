@@ -194,7 +194,7 @@ body{
 /* Trips Section */
 
 .card-img-top.small{
-    height: 200px;
+    height: 230px;
 }
 
 .card-title{
@@ -215,7 +215,7 @@ body{
 .card.alternate{
     background-color: #F3F8F9;
     color: #71ABB6;
-    border: 2px solid #FF7F22;
+    border: 2px solid #71ABB6;
 }
 
  .card-img-top{
@@ -225,6 +225,21 @@ body{
     margin: auto;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 } 
+
+
+.btn-dark{
+    width: 200px !important;
+    background-color: #F3F8F9;
+    color: #71ABB6;
+    border: 2px solid #71ABB6;
+    margin-bottom: 50px;
+}
+
+.btn-dark:hover{
+    background-color: #FF7F22;
+    color: #F3F8F9;
+    border: 2px solid #F3F8F9   ;
+}
 
 /* ============================================================================================ */
 /* Filter Slider Section */
@@ -415,10 +430,23 @@ footer{
 }
 
 .footer-links{
-    float: right;
-}
+    float: right;  
+} 
+
 .footer-links a{
-    width: 24px;
-    height: 24px;
     color: #71ABB6;
+}
+
+.footer-links .insta{
+    margin-top: 5px;
+}
+
+.footer-links .facebook{
+    margin-left: 60px;
+    margin-top: -24px;
+}
+
+.footer-links .twitter{
+    margin-left: 120px;
+    margin-top: -24px;
 }
