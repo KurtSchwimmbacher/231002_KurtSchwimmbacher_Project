@@ -495,6 +495,20 @@ body{
     cursor: pointer;
 }
 
+
+.btn-con-ch, .btn-can-ch{
+    background-color: #71ABB6;
+    color: #F3F8F9 !important;
+    border: 2px solid #71ABB6;
+    cursor: pointer;
+}
+
+.btn-con-ch:hover, .btn-can-ch:hover{
+    color: #F3F8F9;
+    background-color: #FF7F22;
+    border: 2px solid #F3F8F9;
+}
+
 /* ==================================================================================== */
 /* footer section */
 footer{

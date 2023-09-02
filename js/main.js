@@ -551,7 +551,7 @@ formatFinalPrice =(priceAdj)=>{
 // ================================================================================================
 returnDefault = () =>{
     localStorage.removeItem("TripBooking");
-    window.location.href = "../index.html";
+   
 }
 // ================================================================================================
 
@@ -782,6 +782,21 @@ $("#removeAll").on('click',function(){
 
     recalcTotals();
 });
+
+$("#confirmBooking").on('click', function(){
+    returnDefault();
+    $("#loadedTrips").empty();
+    recalcTotals();
+    window.location.href = "../index.html";
+});
+
+$("#cancelBooking").on('click', function(){
+    returnDefault();
+    $("#loadedTrips").empty();
+    recalcTotals();
+
+});
+
 
 
 
