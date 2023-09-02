@@ -8,6 +8,7 @@ const tripArr = [
         duration: 14,
         departurePort: "Port Louis, Mauritius",
         price: 3534,
+        addedDate: "2023-06-3",
         roundTrip: true
     },
     {
@@ -17,6 +18,7 @@ const tripArr = [
         duration: 4,
         departurePort: "Oslo, Norway",
         price: 5847,
+        addedDate: "2023-01-22",
         roundTrip: true
     },
     {
@@ -26,6 +28,7 @@ const tripArr = [
         duration: 6,
         departurePort: "Havana, Cuba",
         price: 3134,
+        addedDate: "2023-08-30",
         roundTrip: true
     },     
     {
@@ -35,6 +38,7 @@ const tripArr = [
         duration: 13,
         departurePort: "Cape Town, South Africa",
         price: 4934,
+        addedDate: "2023-05-17",
         roundTrip: false
     },
     {
@@ -44,6 +48,7 @@ const tripArr = [
         duration: 9,
         departurePort: "Tel-Aviv, Isreal",
         price: 1834,
+        addedDate: "2023-02-12",
         roundTrip: true
     },
     {
@@ -53,6 +58,7 @@ const tripArr = [
         duration: 21,
         departurePort: "Oslo, Norway",
         price: 7789,
+        addedDate: "2023-05-05",
         roundTrip: false
     },
     {
@@ -62,12 +68,14 @@ const tripArr = [
         duration: 9,
         departurePort: "Tel-Aviv, Isreal",
         price: 600,
+        addedDate: "2023-07-22",
         roundTrip: false
     }
 ];
 
 
     let appliedSort = "date added";
+    let appliedFilter = "";
 // ================================================================================================
 
 
@@ -263,6 +271,30 @@ function basicFilterSortTrips(){
             filterSortTripArr = tripArr;
         }
 
+        if(appliedSort){
+            if(appliedSort === "low to high"){
+                // sort by price
+                filterSortTripArr = tripArr.sort((a,b) =>{
+                    return a.price -b.price;    
+                });
+            }
+            else if(appliedSort === "alphabetically"){
+                // sort by alphabetically, a to z
+                filterSortTripArr = tripArr.sort((a,b) =>{
+                    return a.name.localeCompare(b.name);    
+                });
+            }
+            else if(appliedSort === "date added"){
+                // sort by date added
+                filterSortTripArr = tripArr.sort((a,b) =>{
+                    let da = new Date(a.addedDate);
+                    let db = new Date(b.addedDate);
+                    
+                    return db-da;
+                });
+            }
+        }
+
         
 
 
@@ -390,7 +422,6 @@ $.ajax({
 storeTrip = (tripArr) =>{
     let tripData = JSON.stringify(tripArr);
     localStorage.setItem("TripBooking",tripData);
-    window.location.href = 'checkout.html';
 }
 // ================================================================================================
 
@@ -419,6 +450,8 @@ $(document).ready(()=>{
    
        });
     // ================================================================================================
+
+    let counter = 0;
 
        $(".btn-dark").on('click',function(){
 
@@ -456,6 +489,15 @@ $(document).ready(()=>{
             price: 3534,
             roundTrip: true
         }
+
+
+        let orderedTrips =[];
+        orderedTrips[counter] = tripObj;
+        counter++;
+
+        console.log(orderedTrips)
+
+        storeTrip(orderedTrips);
 
 
        });
@@ -536,7 +578,7 @@ $(document).ready(()=>{
 
     $("input[name = 'sortRadio']").click( function(){
         appliedSort = $(this).attr('value');
-
+        console.log(appliedSort);
         basicFilterSortTrips();
     });
 // ================================================================================================

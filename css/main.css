@@ -22,6 +22,10 @@ body{
     background-color: #71ABB6;
 }
 
+.checkout-body{
+    background-color: #F3F8F9 !important;
+}
+
 .sec-head{
     text-align: center;
     color: #F3F8F9;
@@ -410,8 +414,20 @@ body{
     color: #71ABB6;
     font-size: 20px;
 }
+/* ==================================================================================== */
+/* Checkout page */
 
 
+.checkout-header{
+    text-align: center;
+    color: #71ABB6;
+    
+}
+
+.trip-body{
+    text-align: center;
+    color: #71ABB6;
+}
 
 /* ==================================================================================== */
 /* footer section */
