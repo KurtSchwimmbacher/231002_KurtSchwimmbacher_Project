@@ -654,6 +654,24 @@ $(document).ready(()=>{
 
 loadTripsCheckout();
 
+
+// remove trip when remove is clicked
+$("#loadedTrips").on('click','.remove', function (){
+    //remove selected row from the table     
+    let findName = $(this).parent().find("#tripName").text();
+    let data = JSON.parse(localStorage.getItem("TripBooking"));
+    for(let i = 0; i <data.length;i++){
+        if(data[i].name === findName){
+            data.splice(i,1);
+        }
+    }
+    console.log(data);
+    localStorage.removeItem("TripBooking");
+    storeTrip(data);
+    
+    $(this).parent().remove();
+});
+
 });
 
 
