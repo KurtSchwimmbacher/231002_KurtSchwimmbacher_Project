@@ -429,6 +429,17 @@ body{
     color: #71ABB6;
 }
 
+.card-img-left{
+    border-radius: 15px;
+    width: 110%;
+    height: auto;
+}
+
+.total-price{
+    font-size: 32px;
+    color: #71ABB6;
+}
+
 /* ==================================================================================== */
 /* footer section */
 footer{

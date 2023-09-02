@@ -76,6 +76,8 @@ const tripArr = [
 
     let appliedSort = "date added";
     let appliedFilter = "";
+
+    let orderedTrips =[];
 // ================================================================================================
 
 
@@ -105,7 +107,8 @@ function loadTrips (tripsToShow){
         $(current).find("#destination").text("Destinations: " + currentTrip.destinations);
         $(current).find("#duration").text("Duration: " + currentTrip.duration);
         $(current).find("#departure").text("Departure Port: " + currentTrip.departurePort);
-        $(current).find("#price").text("Price: $" + currentTrip.price);
+        let pr = currentTrip.price+"";
+        $(current).find("#price").text("Price: $" + formatFinalPrice(pr));
         $(current).find(".card-img-top").attr("src","../assets/" + currentTrip.picture);
 
         $(current).find(".ticket-number").hide();
@@ -425,9 +428,11 @@ storeTrip = (tripArr) =>{
 }
 // ================================================================================================
 
+// load trips from local storage
+// ================================================================================================
 loadTripsCheckout = () =>{
         let tripData = JSON.parse(localStorage.getItem("TripBooking"));
-        // let dispPrice = document.getElementById("finalPrice");
+        let dispPrice = $(".total-price");
 
         console.log("Load trips works")
     
@@ -449,24 +454,41 @@ loadTripsCheckout = () =>{
             
             // Set the content for the current trip card from the trip array
             $(current).find("#tripName").text(bookedTrip.name);
-            $(current).find("#destination").text("Destinations: " + bookedTrip.destinations);
-            $(current).find("#duration").text(bookedTrip.duration);
+            $(current).find("#destination").text(bookedTrip.destinations);
+            $(current).find("#duration").text(bookedTrip.duration + " Days");
             $(current).find("#departure").text(bookedTrip.departurePort);
-            $(current).find("#price").text("Price: $" + bookedTrip.price);
-            $(current).find(".card-img-top").attr("src",bookedTrip.picture);
-            console.log("Checkout img src "+bookedTrip.picture)
-    
-            $(current).find(".ticket-number").hide();
-            $(current).find("#bookTrip").hide();
-        
-        // dispPrice.innerHTML = "R" + totalPrice +".00";
+
+            let pr = bookedTrip.price+"";
+            $(current).find("#price").text("Price per passenger: $" + formatFinalPrice(pr));
+            $(current).find("#tickets").text("Number of tickets: " + bookedTrip.tickets);
+
+            let tote =bookedTrip.price*bookedTrip.tickets+"";
+
+            $(current).find("#priceTotal").text("Total Price: $" +formatFinalPrice(tote))
+            $(current).find(".card-img-left").attr("src",bookedTrip.picture);        
+
+            totalPrice += bookedTrip.price;         
     }
+    let priceAdj = ""+totalPrice;
+    dispPrice.text("Total Price: $"+ formatFinalPrice(priceAdj).substring(1));
+
+    
+}
+// ================================================================================================
+
+// formats prices
+formatFinalPrice =(priceAdj)=>{
+    return priceAdj.replace(/(.)(?=(\d{3})+$)/g,'$1 ');
 }
 
 
-
-
-
+// restore after purchase button
+// ================================================================================================
+returnDefault = () =>{
+    localStorage.removeItem("TripBooking");
+    window.location.href = "../index.html";
+}
+// ================================================================================================
 
 // ================================================================================================
 // Document Ready
@@ -494,8 +516,7 @@ $(document).ready(()=>{
        });
     // ================================================================================================
 
-    let counter = 0;
-    let orderedTrips =[];
+
 
        $(".btn-dark").on('click',function(){
 
@@ -505,7 +526,6 @@ $(document).ready(()=>{
             // image
             let img = $(this).parent().parent().find(".card-img-top").attr('src');
             // let img = $(this).closest('img').attr('src');
-            console.log("img src "+img);
 
             // destinations
             let objDest = $(this).parent().find("#destination").text();
@@ -536,12 +556,9 @@ $(document).ready(()=>{
             tickets: objTickets
         }
 
+        orderedTrips.push(tripObj);
 
- 
-        orderedTrips[counter] = tripObj;
-        counter++;
-
-        console.log(orderedTrips)
+        console.log("ordered trips"+orderedTrips.length)
 
         storeTrip(orderedTrips);
        });
