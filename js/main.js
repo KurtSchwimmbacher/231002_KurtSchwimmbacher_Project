@@ -559,6 +559,15 @@ returnDefault = () =>{
 // Document Ready
 $(document).ready(()=>{
 
+// home page dynamic h1
+$(".dynamic-head").text("Welcome To Your Holiday");
+
+$(".dynamic-head").on('mouseenter',function(){
+    $(".dynamic-head").text("Your Cruise Link Journey Awaits");
+});
+$(".dynamic-head").on('mouseleave',function(){
+    $(".dynamic-head").text("Welcome To Your Holiday");
+});
 
     loadTrips(tripArr);
     

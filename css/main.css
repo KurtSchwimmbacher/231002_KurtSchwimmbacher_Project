@@ -84,6 +84,10 @@ body{
 
 
 
+.dynamic-head{
+    color: #F3F8F9;
+}
+
 /* Carousel */
 /* =============================================================================================================================================== */
 
@@ -386,7 +390,7 @@ body{
 
 .btn-con, .btn-can{
     background-color: #F3F8F9;
-    color: #71ABB6;
+    color: #71ABB6 !important;
     border: 2px solid #71ABB6;
 }
 
@@ -394,6 +398,7 @@ body{
     background-color: #FF7F22;
     border: 2px solid #F3F8F9;
     cursor: pointer;
+    color: #F3F8F9 !important;
 }
 
 .btn-con:active, .btn-can:active{
