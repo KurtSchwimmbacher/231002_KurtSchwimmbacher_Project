@@ -55,23 +55,23 @@
   <div class="container">
     <h1 class="checkout-header mt-5">Confirm Your Booking</h1>
 
-    <div class="loaded-trips-con">
-      <!-- Booked trips cards go here -->
 
       <table class="table">
-        <tbody id="wishlist-plant-container">
-  
+        <tbody id="loadedTrips">
+        <!-- Booked trips cards go here -->
             
 
         </tbody>
       </table>
 
-    </div>
 
     <template id="bookedTripTemplate">
       <!-- Table Row Code -->
       <tr id="table-row-content">
-        <th scope="row" id="tableRow" class="check-img-con"><img src="../assets/Greece trip Layout.jpg"  class="table-img"></th>
+        <th scope="row" id="tableRow" class="check-img-con">
+          <img src="../assets/Greece trip Layout.jpg"  class="table-img">
+        </th>
+        
         <td id="rowInfo" class="trip-body">
             <h3 class="card-title mb-5" id="tripName">Card title</h3>
             <p class="card-text" id="destination">Temp</p>
@@ -85,6 +85,7 @@
           <p class="card-text" id="removeBtn">Remove Trip</p>   
         </td>
       </tr>
+      <br>
       <!-- Table Row Code end-->
     </template>
   </div>

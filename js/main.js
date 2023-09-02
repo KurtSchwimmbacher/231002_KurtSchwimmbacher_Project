@@ -107,8 +107,7 @@ function loadTrips (tripsToShow){
         $(current).find("#destination").text("Destinations: " + currentTrip.destinations);
         $(current).find("#duration").text("Duration: " + currentTrip.duration);
         $(current).find("#departure").text("Departure Port: " + currentTrip.departurePort);
-        let pr = currentTrip.price+"";
-        $(current).find("#price").text("Price: $" + formatFinalPrice(pr));
+        $(current).find("#price").text("Price: $" + currentTrip.price);
         $(current).find(".card-img-top").attr("src","../assets/" + currentTrip.picture);
 
         $(current).find(".ticket-number").hide();
@@ -447,10 +446,10 @@ loadTripsCheckout = () =>{
             // load trips on trip page
     
             // select the trip container and add trip array to it
-            $(".loaded-trips-con").append($("#bookedTripTemplate").html());
+            $("#loadedTrips").append($("#bookedTripTemplate").html());
     
             // Create a variable that contains the most recently added card
-            let current = $(".loaded-trips-con").children().eq(i);
+            let current = $("#loadedTrips").children().eq(i);
             
             // Set the content for the current trip card from the trip array
             $(current).find("#tripName").text(bookedTrip.name);
@@ -462,18 +461,17 @@ loadTripsCheckout = () =>{
             $(current).find("#price").text("Price per passenger: $" + formatFinalPrice(pr));
             $(current).find("#tickets").text("Number of tickets: " + bookedTrip.tickets);
 
-            let tote =bookedTrip.price*bookedTrip.tickets+"";
-            console.log(bookedTrip.price);
-            $(current).find("#priceTotal").text("Total Price: $" +bookedTrip.price * bookedTrip.tickets)
-            $(current).find(".card-img-left").attr("src",bookedTrip.picture);        
+            let tote =(bookedTrip.price*bookedTrip.tickets)+"";
+            $(current).find("#priceTotal").text("Total Price: $" +formatFinalPrice(tote));
+            $(current).find(".table-img").attr("src",bookedTrip.picture);  
+       
 
-            totalPrice += bookedTrip.price; 
-            totalTickets += bookedTrip.tickets;        
+            totalPrice += (bookedTrip.price*bookedTrip.tickets);
+            totalTickets += parseInt(bookedTrip.tickets);      
     }
     let priceAdj = ""+totalPrice;
-    let tickAdj = totalTickets+"";
-    dispPrice.text("Total Price: $"+ formatFinalPrice(priceAdj).substring(1));
-    dispTickets.text("Total Number of tickets: "+tickAdj.substring(1));
+    dispPrice.text("Total Price: $"+ formatFinalPrice(priceAdj));
+    dispTickets.text("Total Number of tickets: "+totalTickets);
 
     
 }
@@ -561,7 +559,7 @@ $(document).ready(()=>{
 
         orderedTrips.push(tripObj);
 
-        console.log("ordered trips"+orderedTrips.length)
+    
 
         storeTrip(orderedTrips);
        });
