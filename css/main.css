@@ -411,24 +411,28 @@ body{
 
 .btn-outline-success,.btn-outline-secondary{
     margin: 0;
-    width: 200px;
+    width: 175px;
     height: 35px;
     border-radius: 12px;
     text-align: center;
+    font-size: 14px;
+    padding-top: 7px;
 }
 
 .btn-group{
     margin-left: 10%;
+    margin-right: 10%;
 }
 
 .sorting-grp{
-    margin-left: 30.5%;
+    margin-left: 33%;
 }
 
 .simple-filter{
     text-align: center;
     color: #71ABB6;
     font-size: 20px;
+    
 }
 /* ==================================================================================== */
 /* Checkout page */

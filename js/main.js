@@ -252,27 +252,27 @@ function basicFilterSortTrips(){
     let filterSortTripArr = [];
 
         //Filter Trips
-        if(appliedFilter){
+        if(appliedFilter !=""){
             if(appliedFilter == "short"){
                 filterSortTripArr = tripArr.filter(trip =>trip.duration < 6);
             }
             else if(appliedFilter == "long"){
-                filterSortTripArr = tripArr.filter(plant =>plant.duration > 5);
+                filterSortTripArr = tripArr.filter(trip =>trip.duration > 5);
             }
             else if(appliedFilter == "single"){
-                filterSortTripArr = tripArr.filter(plant =>plant.destinations.split(",").length === 1);
+                filterSortTripArr = tripArr.filter(trip =>trip.destinations.split(",").length === 1);
             }
             else if(appliedFilter == "multi"){
-                filterSortTripArr = tripArr.filter(plant =>plant.destinations.split(",").length > 1);
+                filterSortTripArr = tripArr.filter(trip =>trip.destinations.split(",").length > 1);
+            }
+            else if(appliedFilter == "round"){
+                filterSortTripArr = tripArr.filter(trip =>trip.roundTrip === true);
             }
             else if(appliedFilter == "row"){
-                arr = tripArr.sort(function (a, b) { 
+                let arr = tripArr.sort(function (a, b) { 
                      return b - a; 
                 });
                 filterSortTripArr = arr.slice(Math.max(arr.length - 5, 0))
-            }
-            else{
-                filterSortTripArr = tripArr.filter(plant =>plant.lightAmount == appliedFilter);
             }
         }   
         else{
@@ -282,19 +282,19 @@ function basicFilterSortTrips(){
         if(appliedSort){
             if(appliedSort === "low to high"){
                 // sort by price
-                filterSortTripArr = tripArr.sort((a,b) =>{
+                filterSortTripArr = filterSortTripArr.sort((a,b) =>{
                     return a.price -b.price;    
                 });
             }
             else if(appliedSort === "alphabetically"){
                 // sort by alphabetically, a to z
-                filterSortTripArr = tripArr.sort((a,b) =>{
+                filterSortTripArr = filterSortTripArr.sort((a,b) =>{
                     return a.name.localeCompare(b.name);    
                 });
             }
             else if(appliedSort === "date added"){
                 // sort by date added
-                filterSortTripArr = tripArr.sort((a,b) =>{
+                filterSortTripArr = filterSortTripArr.sort((a,b) =>{
                     let da = new Date(a.addedDate);
                     let db = new Date(b.addedDate);
                     
@@ -303,7 +303,7 @@ function basicFilterSortTrips(){
             }
         }
 
-        
+        console.log(filterSortTripArr);
 
 
         loadTrips(filterSortTripArr);
@@ -568,8 +568,13 @@ $(".dynamic-head").on('mouseenter',function(){
 $(".dynamic-head").on('mouseleave',function(){
     $(".dynamic-head").text("Welcome To Your Holiday");
 });
+// ================================================================================================
+
+// ================================================================================================
 
     loadTrips(tripArr);
+
+// ================================================================================================
     
     $(".btn-dark").hide();
     $(".ticket-number").hide();
@@ -592,7 +597,7 @@ $(".dynamic-head").on('mouseleave',function(){
     // ================================================================================================
 
 
-
+// ================================================================================================
        $(".btn-dark").on('click',function(){
 
         // add an on click state to button
@@ -641,7 +646,7 @@ $(".dynamic-head").on('mouseleave',function(){
 
         storeTrip(orderedTrips);
        });
-
+// ================================================================================================
 
 
 
@@ -656,6 +661,8 @@ $(".dynamic-head").on('mouseleave',function(){
     });
 // ================================================================================================
 
+
+
     // Change Logo on Hover Other Pages
 // ================================================================================================
 $(".trips-hover").on("mouseenter", function(){
@@ -666,6 +673,8 @@ $(".trips-hover").on("mouseleave", function(){
     $("#imgLogo").attr("src","../assets/Logo Main.svg");
 });
 // ================================================================================================
+
+
 
 // ================================================================================================
     
@@ -685,6 +694,9 @@ $(".trips-hover").on("mouseleave", function(){
         $(".open-filters").toggle(1200);
     });
 // ================================================================================================
+
+
+
 
 // ================================================================================================
     // Filters dom manipulation
@@ -722,7 +734,7 @@ $(".trips-hover").on("mouseleave", function(){
 // ================================================================================================
     $("input[name= 'filterRadio']").click(function(){
         appliedFilter = $(this).attr('value');
-
+        console.log("Applied Filter "+ appliedFilter)
         basicFilterSortTrips();
     });
 
