@@ -425,6 +425,49 @@ storeTrip = (tripArr) =>{
 }
 // ================================================================================================
 
+loadTripsCheckout = () =>{
+        let tripData = JSON.parse(localStorage.getItem("TripBooking"));
+        // let dispPrice = document.getElementById("finalPrice");
+
+        console.log("Load trips works")
+    
+        let totalPrice = 0;
+
+        $(".loaded-trips-con").empty();
+
+        for(let i = 0; i < tripData.length; i++){
+            const bookedTrip = tripData[i];
+    
+            // ===============================================================
+            // load trips on trip page
+    
+            // select the trip container and add trip array to it
+            $(".loaded-trips-con").append($("#bookedTripTemplate").html());
+    
+            // Create a variable that contains the most recently added card
+            let current = $(".loaded-trips-con").children().eq(i);
+            
+            // Set the content for the current trip card from the trip array
+            $(current).find("#tripName").text(bookedTrip.name);
+            $(current).find("#destination").text("Destinations: " + bookedTrip.destinations);
+            $(current).find("#duration").text(bookedTrip.duration);
+            $(current).find("#departure").text(bookedTrip.departurePort);
+            $(current).find("#price").text("Price: $" + bookedTrip.price);
+            $(current).find(".card-img-top").attr("src",bookedTrip.picture);
+            console.log("Checkout img src "+bookedTrip.picture)
+    
+            $(current).find(".ticket-number").hide();
+            $(current).find("#bookTrip").hide();
+        
+        // dispPrice.innerHTML = "R" + totalPrice +".00";
+    }
+}
+
+
+
+
+
+
 // ================================================================================================
 // Document Ready
 $(document).ready(()=>{
@@ -452,6 +495,7 @@ $(document).ready(()=>{
     // ================================================================================================
 
     let counter = 0;
+    let orderedTrips =[];
 
        $(".btn-dark").on('click',function(){
 
@@ -459,8 +503,9 @@ $(document).ready(()=>{
             let objName = $(this).parent().find("#tripName").text();
 
             // image
-            let img = $(this).parent().find("#cardImg").attr('src');
-            console.log(img);
+            let img = $(this).parent().parent().find(".card-img-top").attr('src');
+            // let img = $(this).closest('img').attr('src');
+            console.log("img src "+img);
 
             // destinations
             let objDest = $(this).parent().find("#destination").text();
@@ -482,24 +527,23 @@ $(document).ready(()=>{
 
         let tripObj ={
             name: objName,
-            picture: "../assets/trips/Ko Phi Phi of Thailand.jpg",
-            destinations: "Thailand, Maldives, Seychelles",
-            duration: 14,
-            departurePort: "Port Louis, Mauritius",
-            price: 3534,
-            roundTrip: true
+            picture: img,
+            destinations: objDest,
+            duration: objDur,
+            departurePort: objDep,
+            price: objPrice,
+            roundTrip: true,
+            tickets: objTickets
         }
 
 
-        let orderedTrips =[];
+ 
         orderedTrips[counter] = tripObj;
         counter++;
 
         console.log(orderedTrips)
 
         storeTrip(orderedTrips);
-
-
        });
 
 
@@ -587,6 +631,10 @@ $(document).ready(()=>{
 // save tickets to checkout page
 // add readme from week 7 add link to demo video in readme
 
+// ================================================================================================
+// Checkout page
+
+loadTripsCheckout();
 
 });
 
