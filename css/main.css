@@ -239,10 +239,17 @@ body{
     margin-bottom: 50px;
 }
 
+
+.btn-dark.clicked{
+    background-color: #FF7F22;
+    color: #F3F8F9;
+    border: 2px solid #F3F8F9;
+}
+
 .btn-dark:hover{
     background-color: #FF7F22;
     color: #F3F8F9;
-    border: 2px solid #F3F8F9   ;
+    border: 2px solid #F3F8F9;
 }
 
 /* ============================================================================================ */

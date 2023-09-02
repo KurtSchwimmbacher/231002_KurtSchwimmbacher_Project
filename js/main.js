@@ -586,6 +586,10 @@ $(document).ready(()=>{
 
        $(".btn-dark").on('click',function(){
 
+        // add an on click state to button
+        $(this).text("Tickets Booked!");
+        $(this).toggleClass("clicked");
+        
             // name
             let objName = $(this).parent().find("#tripName").text();
 
