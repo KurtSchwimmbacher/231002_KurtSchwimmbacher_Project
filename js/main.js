@@ -109,10 +109,16 @@ function loadTrips (tripsToShow){
         $(current).find("#departure").text("Departure Port: " + currentTrip.departurePort);
         $(current).find("#price").text("Price: $" + currentTrip.price);
         $(current).find(".card-img-top").attr("src","../assets/" + currentTrip.picture);
+        if(currentTrip.roundTrip){
+            $(current).find("#roundTrip").text("Roundtrip: yes")
+        }
+        else{
+            $(current).find("#roundTrip").text("Roundtrip: no")
+        }
 
         $(current).find(".ticket-number").hide();
         $(current).find("#bookTrip").hide();
-
+        
     }
 
 }
@@ -568,6 +574,7 @@ $(document).ready(()=>{
    
            $(this).parent().find(".ticket-number").toggle();
            $(this).parent().find("#bookTrip").toggle();
+           $(this).parent().find("#roundTrip").toggle();
 
            $(this).parent().toggleClass("alternate");
            $(this).toggleClass("small");
@@ -625,8 +632,8 @@ $(document).ready(()=>{
 
 
 
-    // Change Logo on Hover
-    // ================================================================================================
+    // Change Logo on Hover Home Page
+// ================================================================================================
     $(".navbar-brand").on("mouseenter", function(){
         $("#imgLogo").attr("src","assets/Logo Hover.svg");
     });
@@ -634,7 +641,18 @@ $(document).ready(()=>{
     $(".navbar-brand").on("mouseleave", function(){
         $("#imgLogo").attr("src","assets/Logo Main.svg");
     });
-        // ================================================================================================
+// ================================================================================================
+
+    // Change Logo on Hover Other Pages
+// ================================================================================================
+$(".trips-hover").on("mouseenter", function(){
+    $("#imgLogo").attr("src","../assets/Logo Hover.svg");
+});
+
+$(".trips-hover").on("mouseleave", function(){
+    $("#imgLogo").attr("src","../assets/Logo Main.svg");
+});
+// ================================================================================================
 
 // ================================================================================================
     

@@ -448,6 +448,11 @@ body{
     color: #71ABB6 !important;
 }
 
+.remove:hover{
+    color: #FF7F22 !important;
+    font-weight: 800;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
 .total-price{
     font-size: 32px;

@@ -28,7 +28,7 @@
     <div class="container justify-content-center">
 
       <!-- Logo -->
-      <a class="navbar-brand me-auto" href="index.html">
+      <a class="navbar-brand me-auto trips-hover" href="index.html">
           Ocean
           <img src="../assets/Logo Main.svg" alt="Bootstrap" width="30" height="24" class="image-logo" id="imgLogo">
           Link
@@ -71,7 +71,7 @@
         <th scope="row" id="tableRow" class="check-img-con">
           <img src="../assets/Greece trip Layout.jpg"  class="table-img">
         </th>
-        
+
         <td id="rowInfo" class="trip-body">
             <h3 class="card-title mb-5" id="tripName">Card title</h3>
             <p class="card-text" id="destination">Temp</p>
@@ -82,7 +82,7 @@
             <p class="card-text" id="priceTotal">Temp</p>                
         </td>
         <td class="remove">
-          <p class="card-text" id="removeBtn">Remove Trip</p>   
+          <p class="card-text card-remove" id="removeBtn">Remove Trip</p>   
         </td>
       </tr>
       <br>
@@ -105,19 +105,28 @@
     <!-- Footer -->
     <footer class="mt-5">
       <div class="container mt-5 pt-5">
-        <a class="navbar-brand footer-brand" href="index.html">
-          Ocean
-          <img src="../assets/Logo Main.svg" alt="Bootstrap" width="30" height="24">
-          Link
-        </a>
-
-        <div class="align-self-end footer-links">
-          <a><i class="bi bi-instagram"></i></a>
+        <div class="row">
+          <div class="col-9">
+            <a class="navbar-brand footer-brand trips-hover" href="../index.html">
+              Ocean
+              <img src="../assets/Logo Main.svg" alt="Bootstrap" width="30" height="24">
+              Link
+            </a>
+          </div>
           
-          <i class="bi bi-facebook"></i>  
-          <i class="bi bi-twitter"></i>
+  
+          <div class="col-3 footer-links">
+            <div class="social insta">
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+            <div class="social facebook">
+              <a href="#"><i class="bi bi-facebook"></i>  </a>
+            </div>
+            <div class="social twitter">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
         </div>
-
       </div>
     </footer>
 
