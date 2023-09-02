@@ -589,7 +589,7 @@ $(document).ready(()=>{
         // add an on click state to button
         $(this).text("Tickets Booked!");
         $(this).toggleClass("clicked");
-        
+
             // name
             let objName = $(this).parent().find("#tripName").text();
 
@@ -745,13 +745,24 @@ $("#loadedTrips").on('click','.remove', function (){
             data.splice(i,1);
         }
     }
-    console.log(data);
     localStorage.removeItem("TripBooking");
     storeTrip(data);
     
     $(this).parent().remove();
     recalcTotals();
 });
+
+
+// remove all trips from checkout page
+$("#removeAll").on('click',function(){
+    localStorage.removeItem("TripBooking");
+
+    $("#loadedTrips").empty();
+
+    recalcTotals();
+});
+
+
 
 });
 
