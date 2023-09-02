@@ -421,19 +421,34 @@ body{
 .checkout-header{
     text-align: center;
     color: #71ABB6;
-    
+    margin-bottom: 100px;
+}
+
+.check-img-con{
+    width: 40%;
+    vertical-align: middle;
+}
+
+
+
+.table-img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 15px;
 }
 
 .trip-body{
+    width: 50%;
+    color: #71ABB6 !important;
     text-align: center;
-    color: #71ABB6;
 }
 
-.card-img-left{
-    border-radius: 15px;
-    width: 110%;
-    height: auto;
+.remove{
+    vertical-align: middle;
+    color: #71ABB6 !important;
 }
+
 
 .total-price{
     font-size: 32px;

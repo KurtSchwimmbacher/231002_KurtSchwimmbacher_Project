@@ -57,18 +57,22 @@
 
     <div class="loaded-trips-con">
       <!-- Booked trips cards go here -->
+
+      <table class="table">
+        <tbody id="wishlist-plant-container">
+  
+            
+
+        </tbody>
+      </table>
+
     </div>
 
     <template id="bookedTripTemplate">
-      <div class="row mt-5">
-        <div class="col-5">
-          <!-- Card Code -->
-          <div class="trip-img">
-              <img src="../assets/trips/Alaska Trip.png" class="card-img-left" alt="..." id="cardImg">
-          </div>
-        </div>
-        <div class="col-7">
-          <div class="trip-body">
+      <!-- Table Row Code -->
+      <tr id="table-row-content">
+        <th scope="row" id="tableRow" class="check-img-con"><img src="../assets/Greece trip Layout.jpg"  class="table-img"></th>
+        <td id="rowInfo" class="trip-body">
             <h3 class="card-title mb-5" id="tripName">Card title</h3>
             <p class="card-text" id="destination">Temp</p>
             <p class="card-text" id="duration">Temp</p>
@@ -76,16 +80,19 @@
             <p class="card-text" id="tickets">Temp</p>
             <p class="card-text" id="price">Temp</p> 
             <p class="card-text" id="priceTotal">Temp</p>                
-          </div>
-        </div>
-      </div>
+        </td>
+        <td class="remove">
+          <p class="card-text" id="removeBtn">Remove Trip</p>   
+        </td>
+      </tr>
+      <!-- Table Row Code end-->
     </template>
   </div>
 
 
   <!-- confirm bookings -->
  <!-- ========================================================================================= -->
-  <div class="container mt-5 pt-5">
+  <div class="container mt-5 pt-5">    
     <div class="final-details">
       <p class="total-price">Total Price: </p>
       <p class="total-tickets">Total Number of tickets: </p>

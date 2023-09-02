@@ -463,8 +463,8 @@ loadTripsCheckout = () =>{
             $(current).find("#tickets").text("Number of tickets: " + bookedTrip.tickets);
 
             let tote =bookedTrip.price*bookedTrip.tickets+"";
-
-            $(current).find("#priceTotal").text("Total Price: $" +formatFinalPrice(tote))
+            console.log(bookedTrip.price);
+            $(current).find("#priceTotal").text("Total Price: $" +bookedTrip.price * bookedTrip.tickets)
             $(current).find(".card-img-left").attr("src",bookedTrip.picture);        
 
             totalPrice += bookedTrip.price; 
