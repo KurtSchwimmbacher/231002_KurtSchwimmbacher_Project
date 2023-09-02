@@ -528,6 +528,14 @@ loadTripsCheckout = () =>{
             let tote =(bookedTrip.price*bookedTrip.tickets)+"";
             $(current).find("#priceTotal").text("Total Price: $" +formatFinalPrice(tote));
             $(current).find(".table-img").attr("src",bookedTrip.picture);  
+
+            if(bookedTrip.roundTrip){
+                $(current).find("#roundTrip").text("Round Trip: Yes");  
+            }
+            else{
+                $(current).find("#roundTrip").text("Round Trip: No");
+            }
+           
        
 
             totalPrice += (bookedTrip.price*bookedTrip.tickets);
@@ -627,6 +635,10 @@ $(".dynamic-head").on('mouseleave',function(){
             // get number of tickets
             let objTickets = $(this).parent().find("#ticketNum").val();
 
+            // get roundtrip
+            let roundTest = $(this).parent().find("#roundTrip").text().split(" ");
+            let roundT = roundTest[1];
+
         //roundtrip still needed
 
         let tripObj ={
@@ -636,7 +648,7 @@ $(".dynamic-head").on('mouseleave',function(){
             duration: objDur,
             departurePort: objDep,
             price: objPrice,
-            roundTrip: true,
+            roundTrip: roundT,
             tickets: objTickets
         }
 
@@ -787,7 +799,6 @@ $("#confirmBooking").on('click', function(){
     returnDefault();
     $("#loadedTrips").empty();
     recalcTotals();
-    window.location.href = "../index.html";
 });
 
 $("#cancelBooking").on('click', function(){
@@ -797,6 +808,9 @@ $("#cancelBooking").on('click', function(){
 
 });
 
+$("#closeModal").on('click',function(){
+    window.location.href = "../index.html";
+});
 
 
 

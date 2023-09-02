@@ -509,6 +509,22 @@ body{
     border: 2px solid #F3F8F9;
 }
 
+.modal-title{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: #71ABB6;
+    margin-left: 33%;
+}
+
+.btn-secondary{
+    width: 80%;
+    align-self: center;
+    background-color: #71ABB6;
+    color: #F3F8F9;
+    margin-right: 10%;
+    border: 2px solid #F3F8F9;
+}
+
 /* ==================================================================================== */
 /* footer section */
 footer{
