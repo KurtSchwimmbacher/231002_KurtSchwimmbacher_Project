@@ -304,6 +304,64 @@ function basicFilterSortTrips(){
 }
 
 
+
+function recalcTotals(){
+    let priceDisp = $(".total-price");
+    let tickDisp = $(".total-tickets");
+    let totalPrice = 0;
+    let totalTickets = 0;
+
+    // get price
+
+    //filters out all the children cards to get just their price
+    let priceArr = $("#loadedTrips").children().find("#priceTotal").text().split("$");
+    for(let i = 1; i<priceArr.length;i++){
+        priceArr[i-1] = priceArr[i];
+    }
+    // remove the last entry because its a duplicate
+    priceArr.pop();
+    //filter array for just the price values
+    let newPA = [];
+    for(let i = 0;i<priceArr.length;i++){
+        let tempArr = priceArr[i].split("T");
+        newPA[i] = tempArr[0];
+    }
+    // loop through and convert to ints and add up prices
+    for(let i = 0; i <newPA.length;i++){
+        newPA[i] = parseInt(newPA[i].substring(0,1)+newPA[i].substring(2));
+        totalPrice+= newPA[i];
+    }
+
+    // display new total price
+    priceDisp.text("Total Price: $" +formatFinalPrice(totalPrice+""));
+
+    // get tickets
+
+    // split into smaller chunks
+    let ticketArr = $("#loadedTrips").children().find("#tickets").text().split(":");
+    for(let i = 1; i<ticketArr.length;i++){
+        ticketArr[i-1] = ticketArr[i];
+    }
+    // remove last entry because its a duplicate
+    ticketArr.pop();
+
+    // filter array for just ticket values
+    let newTA = [];
+    for(let i = 0;i<ticketArr.length;i++){
+        let tempArr = ticketArr[i].split("N");
+        newTA[i] = tempArr[0];
+    }
+    // convert them to intergers and add them up
+    for(let i = 0; i <newTA.length;i++){
+        newTA[i] = parseInt(newTA[i]);
+        totalTickets+= newTA[i];
+    }
+    
+    // display new total tickets
+    tickDisp.text("Total Number of Tickets: "+totalTickets);
+}
+
+
 // ================================================================================================
 
 
@@ -670,6 +728,7 @@ $("#loadedTrips").on('click','.remove', function (){
     storeTrip(data);
     
     $(this).parent().remove();
+    recalcTotals();
 });
 
 });
