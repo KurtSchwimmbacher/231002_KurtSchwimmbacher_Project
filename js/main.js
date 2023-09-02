@@ -433,10 +433,10 @@ storeTrip = (tripArr) =>{
 loadTripsCheckout = () =>{
         let tripData = JSON.parse(localStorage.getItem("TripBooking"));
         let dispPrice = $(".total-price");
-
-        console.log("Load trips works")
+        let dispTickets = $(".total-tickets");
     
         let totalPrice = 0;
+        let totalTickets = 0;
 
         $(".loaded-trips-con").empty();
 
@@ -467,10 +467,13 @@ loadTripsCheckout = () =>{
             $(current).find("#priceTotal").text("Total Price: $" +formatFinalPrice(tote))
             $(current).find(".card-img-left").attr("src",bookedTrip.picture);        
 
-            totalPrice += bookedTrip.price;         
+            totalPrice += bookedTrip.price; 
+            totalTickets += bookedTrip.tickets;        
     }
     let priceAdj = ""+totalPrice;
+    let tickAdj = totalTickets+"";
     dispPrice.text("Total Price: $"+ formatFinalPrice(priceAdj).substring(1));
+    dispTickets.text("Total Number of tickets: "+tickAdj.substring(1));
 
     
 }
