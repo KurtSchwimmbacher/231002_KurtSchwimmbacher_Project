@@ -1,4 +1,4 @@
-231002_KurtSchwimmbacher_DV100 T3 Final Submission
+[231002 Kurt Schwimmbacher DV100 T3 Recording.zip](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/files/12505331/231002.Kurt.Schwimmbacher.DV100.T3.Recording.zip)231002_KurtSchwimmbacher_DV100 T3 Final Submission
 
 ## About this project
 This project was made as my First Year DV100 Term 3 Submission project at The Open Window institute.
@@ -25,14 +25,16 @@ Below is a set of images of the wishlist page
 
 ## Demonstration Video
 Below is a video showcasing the functionality of the website
+Unfortunately its too large to upload normally so I have to upload a zip
 
+[231002 Kurt Schwimmbacher DV100 T3 Recording.zip](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/files/12505330/231002.Kurt.Schwimmbacher.DV100.T3.Recording.zip)
 
 ## Getting started
 To get started with this project at the very least you'd need a github account, which presumably you have if you are reading this. Alongside github desktop and an IDE of your choice, I used VS Code for this project, and thats all it would take to get a local copy of this project onto your machine. 
 
 
 ## Built With
-As already mentioned, I used github and visual studio code for this project. The languages used in this were HTML, CSS, and Javascript. Alongside JQuery, more JQuery than vanilla javascript. I also used the open weather api which can be found using this link: 
+As already mentioned, I used github and visual studio code for this project. The languages used in this were HTML, CSS, and Javascript. Alongside JQuery, more JQuery than vanilla javascript. I also used the open weather api which can be found using this link: https://openweathermap.org/api
 
 
 ## Contributing
@@ -46,6 +48,29 @@ The only author would be me, Kurt Schwimmbacher.
 ## License 
 This project is open to anyone who would like access to it. 
 Anything you get out of this I'd appreciate a nod in my direction but it's not required in any way. 
+[UploMIT License
+
+Copyright (c) 2023 KurtSchwimmbacher
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ading LICENSE…]()
+
 
 
 ## Acknowledgements 
