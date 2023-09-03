@@ -1,4 +1,4 @@
-![Home Page 2](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/assets/125290141/5711e348-76fa-4601-bf80-2f2710c69201)# 231002_KurtSchwimmbacher_DV100 T3 Final Submission
+231002_KurtSchwimmbacher_DV100 T3 Final Submission
 
 ## About this project
 This project was made as my First Year DV100 Term 3 Submission project at The Open Window institute.
@@ -21,6 +21,10 @@ Below is a set of images of the wishlist page
 ![Wishlist page 2](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/assets/125290141/c85ccee9-e6b4-45c6-9193-7b6d55b2a7cc)
 ![Wishlist page 3](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/assets/125290141/e4204ca6-6c60-4f97-b47f-d97507e58dfe)
 ![Wishlist page 4](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/assets/125290141/f47c9a6b-db32-483e-9cda-ae6233890ba1)
+
+
+## Demonstration Video
+Below is a video showcasing the functionality of the website
 
 
 ## Getting started
