@@ -75,3 +75,7 @@ ading LICENSE…]()
 
 ## Acknowledgements 
 Paul Loots, new lecturer of the DV100 module, would have to be a an influence on this project. Carlo Kuiper, the TA of the DV100 module. They both walked me through a sample project to learn the skills needed for this project; ranging from api calls to dynamically loading content using JQuery. 
+[2023-OW-Plagiarism Document.pdf](https://github.com/KurtSchwimmbacher/231002_KurtSchwimmbacher_Project/files/12505631/2023-OW-Plagiarism.Document.pdf)
+
+
+
